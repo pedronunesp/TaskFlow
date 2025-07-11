@@ -31,6 +31,7 @@ USER node
 WORKDIR /app
 
 COPY --chown=node:node server .
+RUN chmod +x start.sh
 
 RUN python3 -m venv .venv \
   && .venv/bin/pip3 install -r requirements.txt --no-cache-dir \
